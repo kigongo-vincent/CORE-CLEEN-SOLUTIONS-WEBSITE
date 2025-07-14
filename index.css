@@ -884,6 +884,14 @@ a:link {
     min-width: 95vw;
   }
 
+  .img-card img{
+    min-height: 400px;
+  }
+
+  .sm-none{
+    display: none;
+  }
+
   .container {
     padding: 1rem 0.5rem;
   }
