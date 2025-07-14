@@ -830,7 +830,11 @@ a:link {
     margin-top: var(--spacing-8);
   }
   .container {
-    padding: 2rem 1rem;
+    padding:1rem;
+    max-width: 80vw;
+  }
+  .flex{
+    flex-direction: column;
   }
   .grid,
   .grid.cols-4 {
