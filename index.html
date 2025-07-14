@@ -1,0 +1,592 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AquaGlow Cleaning</title>
+    <link rel="stylesheet" href="index.css" />
+    <script src="index.js" defer></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <!-- AOS Animation Library -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css"
+    />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+  </head>
+  <body class="bg-pale font-sans">
+    <!-- Modal for CTA (hidden by default) -->
+    <div id="ctaModal" style="display: none">
+      <form class="modal-content">
+        <span class="modal-close">&times;</span>
+        <div class="text-2xl">Sign up</div>
+        <small class="opacity-sm">This will guarantee free access</small>
+        <br />
+        <br />
+        <input type="text" placeholder="Your Name" required />
+        <input type="email" placeholder="Your Email" required />
+        <button class="btn btn-primary w-full" type="submit">Sign up</button>
+      </form>
+    </div>
+    <!-- Header / Navigation -->
+    <header
+      class="header blur fixed w-full z-10 border-bottom-nav"
+      data-aos="fade-down"
+    >
+      <div class="flex items-center justify-between py-4 px-8">
+        <div class="flex items-center">
+          <span class="text-2xl font-bold logo-text">
+            <span class="text-paper" id="cleen">CORE</span
+            ><span class="text-primary">CLEEN</span>
+          </span>
+        </div>
+        <nav class="flex items-center space-x-8 nav-text xs-hidden sm:flex">
+          <a href="#home" class="nav-link">Home</a>
+          <a href="#about-us" class="nav-link">About Us</a>
+          <a href="#our-values" class="nav-link">Our Values</a>
+          <a href="#services" class="nav-link">Services</a>
+          <a href="#team" class="nav-link">Team</a>
+          <a href="#testimonials" class="nav-link">Testimonials</a>
+          <a href="#contact" class="nav-link">Contact</a>
+        </nav>
+        <a href="#" class="btn-primary ml-6 xs-hidden sm:inline-block"
+          >REQUEST AN ESTIMATE</a
+        >
+        <!-- Hamburger menu for small screens -->
+        <button
+          id="menuBtn"
+          class="block sm:hidden flex items-center justify-center p-2 ml-4 text-2xl"
+          aria-label="Open menu"
+        >
+          <i class="fas fa-bars"></i>
+        </button>
+        <!-- Sidebar for mobile menu -->
+        <div
+          id="sidebarMenu"
+          class="fixed top-0 left-0 h-full w-64 bg-paper shadow-lg z-50 transform -translate-x-full transition-transform duration-300 ease-in-out sm:hidden"
+          style="display: none"
+        >
+          <div class="flex items-center justify-between px-6 py-4 border-b">
+            <span class="text-2xl font-bold logo-text">
+              <span class="text-paper" id="cleen">CORE</span
+              ><span class="text-primary">CLEEN</span>
+            </span>
+            <button id="closeSidebar" class="text-2xl" aria-label="Close menu">
+              <i class="fas fa-times"></i>
+            </button>
+          </div>
+          <nav class="flex flex-col space-y-4 px-6 py-6 nav-text">
+            <a href="#home" class="nav-link">Home</a>
+            <a href="#about-us" class="nav-link">About Us</a>
+            <a href="#our-values" class="nav-link">Our Values</a>
+            <a href="#services" class="nav-link">Services</a>
+            <a href="#team" class="nav-link">Team</a>
+            <a href="#testimonials" class="nav-link">Testimonials</a>
+            <a href="#contact" class="nav-link">Contact</a>
+            <a href="#" class="btn-primary mt-6">REQUEST AN ESTIMATE</a>
+          </nav>
+        </div>
+      </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section
+      id="home"
+      class="hero-section flex-col items-center justify-center relative bg-hero-img text-paper"
+      data-aos="fade-up"
+      data-aos-delay="100"
+    >
+      <div
+        class="container relative z-10 flex flex-col items-center justify-center min-h-[420px] pt-32 pb-16"
+      >
+        <!-- Spackling SVG icons (CSS-defined) -->
+        <svg
+          class="spackle-svg spackle-1"
+          viewBox="0 0 24 24"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M12 3 Q13 8 21 12 Q13 16 12 21 Q11 16 3 12 Q11 8 12 3Z"
+            fill="white"
+            fill-opacity="0.7"
+          />
+        </svg>
+        <svg
+          class="spackle-svg spackle-2"
+          viewBox="0 0 16 16"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M8 2 Q8.5 5 14 8 Q8.5 11 8 14 Q7.5 11 2 8 Q7.5 5 8 2Z"
+            fill="white"
+            fill-opacity="0.7"
+          />
+        </svg>
+        <svg
+          class="spackle-svg spackle-3"
+          viewBox="0 0 12 12"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M6 1 Q6.5 3.5 11 6 Q6.5 8.5 6 11 Q5.5 8.5 1 6 Q5.5 3.5 6 1Z"
+            fill="white"
+            fill-opacity="0.7"
+          />
+        </svg>
+        <svg
+          class="spackle-svg spackle-4"
+          viewBox="0 0 18 18"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M9 2 Q10 6 16 9 Q10 12 9 16 Q8 12 2 9 Q8 6 9 2Z"
+            fill="white"
+            fill-opacity="0.7"
+          />
+        </svg>
+        <!-- End spackling SVG icons -->
+        <h1
+          class="hero-title text-5xl text-center font-semibold leading-tight mb-4"
+        >
+          Revitalize Your Space<br />
+          <span class="font-bold"
+            >Home or Office, We Clean<br />with Grace!</span
+          >
+        </h1>
+        <p class="hero-subtext text-base font-light mb-8 max-w-xl mx-auto">
+          It is a long established fact that a reader will be distracted by the
+          readable content of a page when looking at its layout.
+        </p>
+        <a href="#" class="hero-btn">
+          <span>EXPLORE OUR SERVICES</span>
+        </a>
+      </div>
+    </section>
+
+    <!-- About Us Section -->
+    <div id="about-us" class="flex items-center container justify-center about">
+      <!-- about us  -->
+      <div class="flex flex-col px-8" data-aos="fade-right">
+        <!-- header  -->
+        <div class="flex items-center">
+          <div class="line"></div>
+          <p class="text-primary">ABOUT US</p>
+        </div>
+
+        <span class="text-5xl font-bold">
+          ABOUT
+          <br />
+          <span class="text-primary">CORECLEEN</span>
+        </span>
+
+        <!-- about content  -->
+        <p>
+          Corecleen aims to build and maintain long-term client relationships,
+          with a competitive and excellent cleaning service. The commitment to
+          excellence and professionalism by our cleaning team is why we have
+          earned the loyalty and trust of our regular customers and are the best
+          choice for new clients.
+        </p>
+
+        <!-- vision and mission  -->
+        <div class="grid gap-6 mt-6">
+          <div class="bg-paper border-left-primary rounded p-6 p-md flex-1">
+            <h3 class="text-xl font-semibold text-primary mb-2">OUR MISSION</h3>
+            <p class="text-base">
+              To provide our clients with top-quality professional and friendly
+              cleaning services that supersede their expectations. By making the
+              interests of our clients our number one priority we will earn
+              their trust and loyalty and they will become our lifelong
+              customers
+            </p>
+          </div>
+          <div class="bg-primary p-md flex-1">
+            <h3 class="text-xl font-semibold text-pale mb-2">OUR VISION</h3>
+            <p class="text-base text-pale">
+              To continually provide excellent services that will propel us to
+              become a household name within the cleaning industry in Uganda
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- quote  -->
+    <div class="flex items-center h-80 bg-paper">
+      <div class="w-50" data-aos="zoom-in">
+        <img
+          class="luminate"
+          src="https://images.pexels.com/photos/6196687/pexels-photo-6196687.jpeg"
+          alt=""
+        />
+      </div>
+
+      <div class="p-lg" data-aos="fade-left">
+        <i class="fa-solid fa-quote-left text-primary text-5xl"></i>
+        <p>
+          At CoreCleen, we embody the friendly, professional team that we would
+          choose to hire ourselves and offer our contract services to you. Let
+          us take care of your cleaning needs while you concentrate on running
+          your business.
+        </p>
+      </div>
+    </div>
+
+    <!-- our values  -->
+    <div id="our-values" class="container" data-aos="fade-up">
+      <div class="text-center text-3xl">Our Values</div>
+      <br />
+      <div class="grid">
+        <div class="bg-paper p-md" data-aos="fade-up" data-aos-delay="100">
+          <p class="text-2xl text-primary">Service Excellence</p>
+          <p>
+            Taking responsibility to complete your tasks, to perform the duties
+            required by your job and to be present for your shifts in order to
+            fulfill and further OUR VALUES the goals of the company.
+          </p>
+        </div>
+        <div class="bg-paper p-md" data-aos="fade-up" data-aos-delay="200">
+          <p class="text-2xl text-primary">Respect</p>
+          <p>
+            We respect the individual, and believe that individuals who are
+            treated with respect and given responsibility respond by giving
+            their best.
+          </p>
+        </div>
+        <div class="bg-paper p-md" data-aos="fade-up" data-aos-delay="300">
+          <p class="text-2xl text-primary">Accountability</p>
+          <p>We own problems and we are always responsive.</p>
+        </div>
+        <div class="bg-paper p-md" data-aos="fade-up" data-aos-delay="400">
+          <p class="text-2xl text-primary">Reliability</p>
+          <p>
+            Being punctual and dependable resulting in being committed to the
+            team, our customers and the company.
+          </p>
+        </div>
+        <div class="bg-paper p-md" data-aos="fade-up" data-aos-delay="500">
+          <p class="text-2xl text-primary">Team Work</p>
+          <p>
+            Increased speed, shared satisfaction, creative solutions and working
+            together.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- customer goals  -->
+    <div class="bg-paper" data-aos="fade-up">
+      <div class="text-center">
+        <div class="flex h-80 items-center">
+          <div class="p-lg" data-aos="fade-right">
+            <div class="flex items-center text-primary">
+              <span class="text-2xl font-bold">Customer Goals</span>
+            </div>
+            <div class="text-lg text-left max-w-2xl mx-auto mt-6">
+              <p class="mb-6">
+                Provide the highest standard of service and workmanship
+              </p>
+              <p class="mb-6">
+                To build long term relationships with our customers by providing
+                quality services at competitive prices
+              </p>
+              <p class="mb-6">Maintaining integrity and initiative</p>
+              <p class="mb-6">
+                Professionalism and pride in our position in the market place
+              </p>
+              <p class="mb-6">Long term stability</p>
+              <p class="mb-6">Maintain a well-trained and motivated staff</p>
+            </div>
+          </div>
+
+          <div class="w-50" data-aos="zoom-in">
+            <img
+              src="https://images.pexels.com/photos/6197043/pexels-photo-6197043.jpeg"
+              alt=""
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- servcies  -->
+    <div id="services" class="container" data-aos="fade-up">
+      <div class="bg-paper p-lg border-left-primary">
+        <p class="text-primary text-2xl">Our Services</p>
+
+        <div class="grid">
+          <div class="bg-pale rounded px-8 py-4">Full Home Deep Cleaning</div>
+          <div class="bg-pale rounded px-8 py-4">Full Home Basic Cleaning</div>
+          <div class="bg-pale rounded px-8 py-4">Commercial Deep Cleaning</div>
+          <div class="bg-pale rounded px-8 py-4">Fumigation</div>
+          <div class="bg-pale rounded px-8 py-4">Move - in - out cleaning</div>
+          <div class="bg-pale rounded px-8 py-4">
+            Post Construction Cleaning
+          </div>
+          <div class="bg-pale rounded px-8 py-4">Garbage Collection</div>
+          <div class="bg-pale rounded px-8 py-4">Roof Cleaning</div>
+          <div class="bg-pale rounded px-8 py-4">Window Cleaning</div>
+          <div class="bg-pale rounded px-8 py-4">Retail Cleaning</div>
+          <div class="bg-pale rounded px-8 py-4">Upholstery Cleaning</div>
+          <div class="bg-pale rounded px-8 py-4">End of Tenancy Cleaning</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- team mebers  -->
+    <div id="team" class="container" data-aos="fade-up">
+      <div class="bg-pale">
+        <!-- heading  -->
+        <p class="text-2xl text-center">Meet Our Team</p>
+      </div>
+
+      <!-- members    -->
+      <div class="grid cols-4">
+        <!-- member  -->
+        <div class="img-card">
+          <img
+            loading="lazy"
+            src="https://images.pexels.com/photos/2701660/pexels-photo-2701660.jpeg"
+            alt=""
+          />
+          <p>Leilah Kayemba<br /><small>Managing Director</small></p>
+        </div>
+
+        <div class="img-card">
+          <img
+            loading="lazy"
+            src="https://images.pexels.com/photos/845457/pexels-photo-845457.jpeg"
+            alt=""
+          />
+          <p>Joshua Besigye<br /><small>Operations Officer</small></p>
+        </div>
+
+        <div class="img-card">
+          <img
+            loading="lazy"
+            src="https://images.pexels.com/photos/2232981/pexels-photo-2232981.jpeg"
+            alt=""
+          />
+          <p>Bernard Mabonga<br /><small>Accountant</small></p>
+        </div>
+
+        <div class="img-card">
+          <img
+            loading="lazy"
+            src="https://images.pexels.com/photos/1576482/pexels-photo-1576482.jpeg"
+            alt=""
+          />
+          <p>Marry Caroline Nakyazze<br /><small>Company Secretary</small></p>
+        </div>
+      </div>
+    </div>
+
+    <!-- textimonials  -->
+    <div id="testimonials" class="bg-paper" data-aos="fade-up">
+      <div class="container">
+        <p>TESTIMONIALS</p>
+
+        <div class="grid gap-8 md:grid-cols-3">
+          <!-- Testimonial 1 -->
+          <div
+            class="bg-pale p-md rounded-lg"
+            data-aos="fade-up"
+            data-aos-delay="100"
+          >
+            <div class="flex items-center mb-4">
+              <div class="photo mr-3">
+                <img
+                  src="https://images.pexels.com/photos/2701660/pexels-photo-2701660.jpeg"
+                  alt="Leilah Kayemba"
+                  class="w-12 h-12 rounded-full object-cover"
+                />
+              </div>
+              <div>
+                <span>Leilah Kayemba</span><br />
+                <small class="opacity-sm">Managing Director</small>
+              </div>
+            </div>
+            <p>
+              Corecleen exceeded my expectations with their thorough cleaning
+              and professionalism. The team was efficient, courteous, and left
+              our workspace sparkling. I highly recommend their services!
+            </p>
+          </div>
+          <!-- Testimonial 2 -->
+          <div
+            class="bg-pale p-md rounded-lg"
+            data-aos="fade-up"
+            data-aos-delay="200"
+          >
+            <div class="flex items-center mb-4">
+              <div class="photo mr-3">
+                <img
+                  src="https://images.pexels.com/photos/845457/pexels-photo-845457.jpeg"
+                  alt="Joshua Besigye"
+                  class="w-12 h-12 rounded-full object-cover"
+                />
+              </div>
+              <div>
+                <span>Joshua Besigye</span><br />
+                <small class="opacity-sm">Operations Officer</small>
+              </div>
+            </div>
+            <p>
+              I was impressed by the attention to detail and reliability of
+              Corecleen. Their staff was friendly and made sure every area was
+              spotless. I will definitely use their services again.
+            </p>
+          </div>
+          <!-- Testimonial 3 -->
+          <div
+            class="bg-pale p-md rounded-lg"
+            data-aos="fade-up"
+            data-aos-delay="300"
+          >
+            <div class="flex items-center mb-4">
+              <div class="photo mr-3">
+                <img
+                  src="https://images.pexels.com/photos/2232981/pexels-photo-2232981.jpeg"
+                  alt="Bernard Mabonga"
+                  class="w-12 h-12 rounded-full object-cover"
+                />
+              </div>
+              <div>
+                <span>Bernard Mabonga</span><br />
+                <small class="opacity-sm">Accountant</small>
+              </div>
+            </div>
+            <p>
+              The Corecleen team was punctual and very professional. They
+              transformed our office environment and paid attention to every
+              detail. I highly recommend them for any cleaning needs.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- footer  -->
+    <footer id="contact" class="bg-dark" data-aos="fade-up">
+      <script>
+        document.addEventListener("DOMContentLoaded", function () {
+          if (window.AOS) {
+            AOS.init({
+              once: true,
+              duration: 800,
+              offset: 80,
+            });
+          }
+        });
+      </script>
+      <div class="container grid cols-4">
+        <!-- contact  -->
+
+        <div>
+          <p class="text-2xl">Contact Us</p>
+          <a href="">corecleensolutions@gmail.com</a>
+          <a href="">+256 (0) 707265146 </a>
+          <a href="">+256 (0) 786151990 </a>
+          <a href="">+256 (0) 782923848 </a>
+        </div>
+
+        <!-- services  -->
+        <div>
+          <p class="text-2xl">Services</p>
+          <p>Office cleaning</p>
+          <p>Home cleaning</p>
+          <p>Fumigation</p>
+          <p>Move-in/out cleaning</p>
+          <p>Post Construction Cleaning</p>
+          <p>Garbage Collection</p>
+          <p>Roof Cleaning</p>
+          <p>Window Cleaning</p>
+          <p>Retail Cleaning</p>
+          <p>Upholstery Cleaning</p>
+          <p>End of Tenancy Cleaning</p>
+        </div>
+
+        <div>
+          <p class="text-2xl">We're located at</p>
+          <p class="">
+            Plot 97 Bukoto street opp. <br />
+            Bin it services <br />
+            P.0 Box 116729 Kampala Uganda
+          </p>
+        </div>
+
+        <!-- links  -->
+        <div>
+          <p class="text-2xl">Follow Us</p>
+          <div class="grid cols-4">
+            <a
+              href="#"
+              aria-label="Facebook"
+              class="text-paper hover:text-primary text-2xl"
+            >
+              <i class="fab fa-facebook-f"></i>
+            </a>
+            <a
+              href="#"
+              aria-label="Twitter"
+              class="text-paper hover:text-primary text-2xl"
+            >
+              <i class="fab fa-twitter"></i>
+            </a>
+            <a
+              href="#"
+              aria-label="Instagram"
+              class="text-paper hover:text-primary text-2xl"
+            >
+              <i class="fab fa-instagram"></i>
+            </a>
+            <a
+              href="#"
+              aria-label="LinkedIn"
+              class="text-paper hover:text-primary text-2xl"
+            >
+              <i class="fab fa-linkedin-in"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <script>
+      // Sidebar menu logic
+      document.addEventListener("DOMContentLoaded", function () {
+        var menuBtn = document.getElementById("menuBtn");
+        var sidebar = document.getElementById("sidebarMenu");
+        var closeSidebar = document.getElementById("closeSidebar");
+        function openSidebar() {
+          sidebar.style.display = "block";
+          setTimeout(function () {
+            sidebar.classList.remove("-translate-x-full");
+          }, 10);
+          document.body.style.overflow = "hidden";
+        }
+        function closeSidebarFn() {
+          sidebar.classList.add("-translate-x-full");
+          setTimeout(function () {
+            sidebar.style.display = "none";
+            document.body.style.overflow = "";
+          }, 300);
+        }
+        if (menuBtn && sidebar && closeSidebar) {
+          menuBtn.addEventListener("click", openSidebar);
+          closeSidebar.addEventListener("click", closeSidebarFn);
+          // Optional: close sidebar on nav link click
+          sidebar.querySelectorAll("a").forEach(function (link) {
+            link.addEventListener("click", closeSidebarFn);
+          });
+        }
+      });
+    </script>
+  </body>
+</html>
