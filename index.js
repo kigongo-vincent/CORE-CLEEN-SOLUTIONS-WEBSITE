@@ -3,12 +3,14 @@ const header = document.querySelector(".header");
 const hero = document.querySelector(".hero-section");
 const cleen = document.getElementById("cleen");
 const navLinks = document.querySelectorAll(".nav-link");
+const menuBtn = document.getElementById("menuBtn")
 const observer = new IntersectionObserver(
   (entries) => {
     entries.forEach((entry) => {
       if (entry.intersectionRatio === 1) {
         // At top: revert to original
         header.classList.remove("blur-full");
+        menuBtn.classList.add("text-paper");
         cleen.classList.add("text-paper");
         navLinks.forEach((link) => {
           link.classList.remove("text-dark-blue");
@@ -17,6 +19,7 @@ const observer = new IntersectionObserver(
         // Scrolled down: dark text
         header.classList.add("blur-full");
         cleen.classList.remove("text-paper");
+        menuBtn.classList.remove("text-paper")
         navLinks.forEach((link) => {
           link.classList.add("text-dark-blue");
         });

@@ -18,19 +18,17 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
   </head>
   <body class="bg-pale font-sans">
-
-
     <!-- Modal for CTA (hidden by default) -->
     <div id="ctaModal" style="display: none">
       <form class="modal-content">
         <span class="modal-close">&times;</span>
         <div class="text-2xl">Sign up</div>
         <small class="opacity-sm">This will guarantee free access</small>
-        <br>
-        <br>
-          <input type="text" placeholder="Your Name" required />
-          <input type="email" placeholder="Your Email" required />
-          <button class="btn btn-primary w-full" type="submit">Sign up</button>
+        <br />
+        <br />
+        <input type="text" placeholder="Your Name" required />
+        <input type="email" placeholder="Your Email" required />
+        <button class="btn btn-primary w-full" type="submit">Sign up</button>
       </form>
     </div>
     <!-- Header / Navigation -->
@@ -38,14 +36,14 @@
       class="header blur fixed w-full z-10 border-bottom-nav"
       data-aos="fade-down"
     >
-      <div class="flex items-center justify-between py-4 px-8">
-        <div class="flex items-center">
+      <div class="flex justify-between py-4 px-8">
+        <div class="">
           <span class="text-2xl font-bold logo-text">
             <span class="text-paper" id="cleen">CORE</span
             ><span class="text-primary">CLEEN</span>
           </span>
         </div>
-        <nav class="flex items-center space-x-8 nav-text hidden sm:flex">
+        <nav  class="hidden flex items-center space-x-8">
           <a href="#home" class="nav-link">Home</a>
           <a href="#about-us" class="nav-link">About Us</a>
           <a href="#our-values" class="nav-link">Our Values</a>
@@ -54,42 +52,50 @@
           <a href="#testimonials" class="nav-link">Testimonials</a>
           <a href="#contact" class="nav-link">Contact</a>
         </nav>
-        <a href="#" class="btn-primary ml-6 hidden sm:inline-block">REQUEST AN ESTIMATE</a>
         <!-- Hamburger menu for small screens -->
-        <button id="menuBtn" class="block sm:hidden flex items-center justify-center p-2 ml-4 text-2xl" aria-label="Open menu">
-          <i class="fas fa-bars"></i>
-        </button>
-    <!-- Sidebar for mobile menu -->
-    <div id="sidebarMenu" class="fixed top-0 left-0 h-full w-64 bg-paper shadow-lg z-50 transform -translate-x-full transition-transform duration-300 ease-in-out sm:hidden" style="display: none;">
-      <div class="flex items-center justify-between px-6 py-4 border-b">
-        <span class="text-2xl font-bold logo-text">
-          <span class="text-paper" id="cleen">CORE</span><span class="text-primary">CLEEN</span>
-        </span>
-        <button id="closeSidebar" class="text-2xl" aria-label="Close menu"><i class="fas fa-times"></i></button>
-      </div>
-      <nav class="flex flex-col space-y-4 px-6 py-6 nav-text">
-        <a href="#home" class="nav-link">Home</a>
-        <a href="#about-us" class="nav-link">About Us</a>
-        <a href="#our-values" class="nav-link">Our Values</a>
-        <a href="#services" class="nav-link">Services</a>
-        <a href="#team" class="nav-link">Team</a>
-        <a href="#testimonials" class="nav-link">Testimonials</a>
-        <a href="#contact" class="nav-link">Contact</a>
-        <a href="#" class="btn-primary mt-6">REQUEST AN ESTIMATE</a>
-      </nav>
-    </div>
+       <span class="text-2xl text-paper" id="menuBtn">
+         <i class="fas fa-bars"></i>
+       </span>
+
+        <!-- Sidebar for mobile menu -->
+        <div
+          id="sidebarMenu"
+          class="fixed p-md top-0 left-0 h-full w-64 bg-paper shadow-lg z-50 transform -translate-x-full transition-transform duration-300 ease-in-out sm:hidden"
+          style="display: none"
+        >
+          <div class="flex items-center justify-between px-6 py-4 border-b">
+            <span class="text-2xl font-bold logo-text">
+              <span class="text-paper" id="cleen">CORE</span
+              ><span class="text-primary">CLEEN</span>
+            </span>
+            <button id="closeSidebar" class="text-2xl" aria-label="Close menu">
+              <i class="fas fa-times"></i>
+            </button>
+          </div>
+          <nav class="flex flex-col space-y-4 px-6 py-6 nav-text">
+            <a href="#home" class="nav-link">Home</a>
+            <a href="#about-us" class="nav-link">About Us</a>
+            <a href="#our-values" class="nav-link">Our Values</a>
+            <a href="#services" class="nav-link">Services</a>
+            <a href="#team" class="nav-link">Team</a>
+            <a href="#testimonials" class="nav-link">Testimonials</a>
+            <a href="#contact" class="nav-link">Contact</a>
+            <a href="#" class="btn-primary mt-6">Sign up</a>
+          </nav>
+        </div>
       </div>
     </header>
 
     <!-- Hero Section -->
     <section
+    style="height: 100vh;"
       id="home"
-      class="hero-section flex-col items-center justify-center relative bg-hero-img text-paper"
+      class="hero-section flex flex-col items-center justify-center relative bg-hero-img text-paper"
       data-aos="fade-up"
       data-aos-delay="100"
     >
       <div
-        class="container relative z-10 flex flex-col items-center justify-center min-h-[420px] pt-32 pb-16"
+        class="container relative z-10 flex flex-col items-center justify-center pt-32 pb-16"
       >
         <!-- Spackling SVG icons (CSS-defined) -->
         <svg
@@ -549,30 +555,30 @@
     </footer>
     <script>
       // Sidebar menu logic
-      document.addEventListener('DOMContentLoaded', function () {
-        var menuBtn = document.getElementById('menuBtn');
-        var sidebar = document.getElementById('sidebarMenu');
-        var closeSidebar = document.getElementById('closeSidebar');
+      document.addEventListener("DOMContentLoaded", function () {
+        var menuBtn = document.getElementById("menuBtn");
+        var sidebar = document.getElementById("sidebarMenu");
+        var closeSidebar = document.getElementById("closeSidebar");
         function openSidebar() {
-          sidebar.style.display = 'block';
-          setTimeout(function() {
-            sidebar.classList.remove('-translate-x-full');
+          sidebar.style.display = "block";
+          setTimeout(function () {
+            sidebar.classList.remove("-translate-x-full");
           }, 10);
-          document.body.style.overflow = 'hidden';
+          document.body.style.overflow = "hidden";
         }
         function closeSidebarFn() {
-          sidebar.classList.add('-translate-x-full');
-          setTimeout(function() {
-            sidebar.style.display = 'none';
-            document.body.style.overflow = '';
+          sidebar.classList.add("-translate-x-full");
+          setTimeout(function () {
+            sidebar.style.display = "none";
+            document.body.style.overflow = "";
           }, 300);
         }
         if (menuBtn && sidebar && closeSidebar) {
-          menuBtn.addEventListener('click', openSidebar);
-          closeSidebar.addEventListener('click', closeSidebarFn);
+          menuBtn.addEventListener("click", openSidebar);
+          closeSidebar.addEventListener("click", closeSidebarFn);
           // Optional: close sidebar on nav link click
-          sidebar.querySelectorAll('a').forEach(function(link) {
-            link.addEventListener('click', closeSidebarFn);
+          sidebar.querySelectorAll("a").forEach(function (link) {
+            link.addEventListener("click", closeSidebarFn);
           });
         }
       });
