@@ -879,6 +879,11 @@ a:link {
 }
 
 @media (max-width: 600px) {
+
+  .modal-content{
+    min-width: 95vw;
+  }
+
   .container {
     padding: 1rem 0.5rem;
   }
