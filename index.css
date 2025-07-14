@@ -16,13 +16,38 @@
     display: inline-block !important;
   }
 }
+
+/* Collapsible menu styles (Bootstrap-like) */
+
+/* Collapsible menu styles (Bootstrap-like) */
+.collapse {
+  display: none;
+  opacity: 0;
+  transform: translateX(-100%);
+  transition: opacity 0.3s, transform 0.3s;
+  height: 100vh;
+  width: 50vw;
+  max-width: 400px;
+  min-width: 220px;
+}
+.collapse.show {
+  display: block;
+  opacity: 1;
+  transform: translateX(0);
+}
+
 /* Responsive hamburger menu button visibility */
 #menuBtn {
-  display: flex;
+  display: block;
 }
 @media (min-width: 640px) {
   #menuBtn {
+    display: none;
+  }
+  #mobileMenu {
     display: none !important;
+  }
+}
   }
 }
 #ctaModal {
@@ -1131,12 +1156,13 @@ form {
 
 .modal-close {
   position: absolute;
-  top: 1rem;
-  right: 1.5rem;
+  top: 5%;
+  right: 5%;
   font-size: 2rem;
   color: var(--color-secondary);
   cursor: pointer;
   transition: color 0.2s;
+  background: none;
 }
 
 @keyframes fadeInModal {
