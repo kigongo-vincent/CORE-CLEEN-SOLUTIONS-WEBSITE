@@ -7,6 +7,10 @@
     <link rel="stylesheet" href="index.css" />
     <script src="index.js" defer></script>
     <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
     />
@@ -32,10 +36,7 @@
       </form>
     </div>
     <!-- Header / Navigation -->
-    <header
-      class="header blur fixed w-full z-10 border-bottom-nav"
-      
-    >
+    <header class="header blur fixed w-full z-10 border-bottom-nav">
       <div class="flex justify-between py-4 px-8">
         <div class="">
           <span class="text-2xl font-bold logo-text">
@@ -43,7 +44,7 @@
             ><span class="text-primary">CLEEN</span>
           </span>
         </div>
-        <nav  class="hidden flex items-center space-x-8">
+        <nav class="hidden flex items-center space-x-8">
           <a href="#home" class="nav-link">Home</a>
           <a href="#about-us" class="nav-link">About Us</a>
           <a href="#our-values" class="nav-link">Our Values</a>
@@ -53,9 +54,9 @@
           <a href="#contact" class="nav-link">Contact</a>
         </nav>
         <!-- Hamburger menu for small screens -->
-       <span class="text-2xl text-paper" id="menuBtn">
-         <i class="fas fa-bars"></i>
-       </span>
+        <span class="text-2xl text-paper" id="menuBtn">
+          <i class="fas fa-bars"></i>
+        </span>
 
         <!-- Sidebar for mobile menu -->
         <div
@@ -63,20 +64,59 @@
           class="fixed p-md top-0 left-0 h-full w-64 bg-paper shadow-lg z-50 transform -translate-x-full transition-transform duration-300 ease-in-out sm:hidden"
           style="display: none"
         >
-          <div style="display: flex; align-items: center; flex-direction: row;" class="flex items-center justify-between px-6 py-4 border-b">
+          <div
+            style="display: flex; align-items: center; flex-direction: row"
+            class="flex items-center justify-between px-6 py-4 border-b"
+          >
             <div></div>
             <button id="closeSidebar" class="text-2xl" aria-label="Close menu">
               <i class="fas fa-times"></i>
             </button>
           </div>
           <nav class="flex flex-col space-y-4 px-6 py-6 nav-text">
-            <a href="#home" class="nav-link" style="color: var(--color-dark-blue);"  style="color: var(--color-dark-blue);">Home</a>
-            <a href="#about-us" class="nav-link" style="color: var(--color-dark-blue);" >About Us</a>
-            <a href="#our-values" class="nav-link" style="color: var(--color-dark-blue);" >Our Values</a>
-            <a href="#services" class="nav-link" style="color: var(--color-dark-blue);" >Services</a>
-            <a href="#team" class="nav-link" style="color: var(--color-dark-blue);" >Team</a>
-            <a href="#testimonials" class="nav-link" style="color: var(--color-dark-blue);" >Testimonials</a>
-            <a href="#contact" class="nav-link" style="color: var(--color-dark-blue);" >Contact</a>
+            <a
+              href="#home"
+              class="nav-link"
+              style="color: var(--color-dark-blue)"
+              style="color: var(--color-dark-blue)"
+              >Home</a
+            >
+            <a
+              href="#about-us"
+              class="nav-link"
+              style="color: var(--color-dark-blue)"
+              >About Us</a
+            >
+            <a
+              href="#our-values"
+              class="nav-link"
+              style="color: var(--color-dark-blue)"
+              >Our Values</a
+            >
+            <a
+              href="#services"
+              class="nav-link"
+              style="color: var(--color-dark-blue)"
+              >Services</a
+            >
+            <a
+              href="#team"
+              class="nav-link"
+              style="color: var(--color-dark-blue)"
+              >Team</a
+            >
+            <a
+              href="#testimonials"
+              class="nav-link"
+              style="color: var(--color-dark-blue)"
+              >Testimonials</a
+            >
+            <a
+              href="#contact"
+              class="nav-link"
+              style="color: var(--color-dark-blue)"
+              >Contact</a
+            >
             <a href="#" class="btn-primary mt-6">Sign up</a>
           </nav>
         </div>
@@ -85,7 +125,7 @@
 
     <!-- Hero Section -->
     <section
-    style="height: 100vh;"
+      style="height: 100vh"
       id="home"
       class="hero-section flex flex-col items-center justify-center relative bg-hero-img text-paper"
       data-aos="fade-up"
